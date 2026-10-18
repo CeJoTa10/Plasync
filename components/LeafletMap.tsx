@@ -26,8 +26,9 @@ export default function LeafletMap({ points, selectedPoint, onSelectPoint }: Lea
     const initMap = async () => {
       try {
         const L = (await import('leaflet')).default;
-        // Import leaflet css
-        await import('leaflet/dist/leaflet.css');
+       // Import leaflet css
+// @ts-expect-error
+await import('leaflet/dist/leaflet.css');
 
         const mapContainer = document.getElementById('ecoleak-map-container');
         if (!mapContainer) return;
